@@ -1,0 +1,43 @@
+name: arXiv → Discord (daily)
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # 08:00 UTC = 05:00 BRT (UTC-3)
+  workflow_dispatch: {}
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser requests
+
+      - name: Run Bayesian/QGP alert
+        env:
+          DISCORD_WEBHOOK_URL_BAYESIAN_QGP: ${{ secrets.HEP_QGP_BAYESIAN_INFERENCE_HOOK }}
+        run: python arxiv-discord-webhook.py
+
+      - name: Run hep-ph alert
+        env:
+          DISCORD_WEBHOOK_URL_HEPPH: ${{ secrets.HEP_PH_HOOK }}
+        run: python arxiv-discord-webhook-2.py
+
+      - name: Run QGP + ML alert
+        env:
+          DISCORD_WEBHOOK_URL_QGP_ML: ${{ secrets.HEP_QGP_ML_HOOK }}
+        run: python arxiv-discord-webhook-hep-qgp-ml.py
+
+      - name: Run QGP + NN alert
+        env:
+          DISCORD_WEBHOOK_URL_QGP_NN: ${{ secrets.HEP_QGP_NEURAL_HOOK }}
+        run: python arxiv-discord-webhook-hep-qgp-neural.py
