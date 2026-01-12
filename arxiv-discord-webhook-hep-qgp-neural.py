@@ -4,7 +4,7 @@ import requests
 from datetime import datetime, timedelta, timezone
 
 # ========= CONFIG =========
-WEBHOOK_URL = ["DISCORD_WEBHOOK_URL_QGP_NN"]
+WEBHOOK_URL = os.environ[["DISCORD_WEBHOOK_URL_QGP_NN"]
 
 ARXIV_URL = (
     "http://export.arxiv.org/api/query?"
