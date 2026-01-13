@@ -4,24 +4,33 @@ import requests
 from datetime import datetime, timedelta, timezone
 
 # ========= CONFIG =========
-WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL_QGP_DKL"]
+WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL_QGP_LFI"]
 
 ARXIV_URL = (
     "http://export.arxiv.org/api/query?"
     "search_query=("
-        "abs:%22deep+kernel+learning%22"
-        "+OR+abs:%22deep+kernel%22"
-        "+OR+abs:%22neural+kernel%22"
-        "+OR+abs:%22learned+kernel%22"
-        "+OR+abs:%22kernel+learning%22"
-        "+OR+abs:%22deep+gaussian+process%22"
-        "+OR+abs:%22neural+gaussian+process%22"
-        "+OR+abs:%22deep+GP%22"
-        "+OR+abs:%22deep+kernel%22"
+        "cat:hep-ph+OR+cat:hep-lat+OR+cat:nucl-th+OR+cat:nucl-ex"
+    ")"
+    "+AND+("
+        "abs:%22simulation-based+inference%22"
+        "+OR+abs:%22likelihood-free%22"
+        "+OR+abs:ABC"
+        "+OR+abs:%22neural+posterior%22"
+        "+OR+abs:%22neural+likelihood%22"
+        "+OR+abs:%22neural+ratio%22"
+        "+OR+abs:SBI"
+        "+OR+abs:%22implicit+model%22"
+    ")"
+    "+AND+("
+        "abs:%22quark+gluon+plasma%22"
+        "+OR+abs:QGP"
+        "+OR+abs:%22heavy+ion%22"
+        "+OR+abs:%22nucleus-nucleus%22"
+        "+OR+abs:%22relativistic+heavy+ion%22"
     ")"
     "&sortBy=submittedDate"
     "&sortOrder=descending"
-    "&max_results=20"
+    "&max_results=100"
 )
 
 # ========= FETCH =========

@@ -16,7 +16,7 @@ ARXIV_URL = (
         "+OR+abs:ML"
         "+OR+abs:emulator"
         "+OR+abs:%22surrogate+model%22"
-        "+OR+abs:%22Gaussian+process%22"
+        "+OR+abs:%22Gaussian+process%22"    
     ")"
     "+AND+("
         "abs:%22quark+gluon+plasma%22"
@@ -30,12 +30,17 @@ ARXIV_URL = (
 
 # ========= FETCH =========
 feed = feedparser.parse(ARXIV_URL)
-yesterday = datetime.utcnow() - timedelta(days=1)
+time_frame = int(os.getenv("TIME_FRAME", "1"))
+cutoff = datetime.utcnow() - timedelta(days=time_frame)
 
 papers = []
 for entry in feed.entries:
-    published = datetime.strptime(entry.published, "%Y-%m-%dT%H:%M:%SZ")
-    if published > yesterday:
+    published = datetime.strptime(
+        entry.published,
+        "%Y-%m-%dT%H:%M:%SZ"
+    ).replace(tzinfo=timezone.utc)
+
+    if published > cutoff:
         papers.append(entry)
 
 if not papers:

@@ -4,24 +4,23 @@ import requests
 from datetime import datetime, timedelta, timezone
 
 # ========= CONFIG =========
-WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL_QGP_DKL"]
+WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL_QGP_BARYOGENESIS"]
 
 ARXIV_URL = (
     "http://export.arxiv.org/api/query?"
     "search_query=("
-        "abs:%22deep+kernel+learning%22"
-        "+OR+abs:%22deep+kernel%22"
-        "+OR+abs:%22neural+kernel%22"
-        "+OR+abs:%22learned+kernel%22"
-        "+OR+abs:%22kernel+learning%22"
-        "+OR+abs:%22deep+gaussian+process%22"
-        "+OR+abs:%22neural+gaussian+process%22"
-        "+OR+abs:%22deep+GP%22"
-        "+OR+abs:%22deep+kernel%22"
+        "cat:hep-ph+OR+cat:hep-th+OR+cat:astro-ph.CO+OR+cat:gr-qc"
+    ")"
+    "+AND+("
+        "abs:baryogenesis"
+        "+OR+abs:%22baryon+asymmetry%22"
+        "+OR+abs:%22matter+antimatter+asymmetry%22"
+        "+OR+abs:leptogenesis"
+        "+OR+abs:%22Sakharov+conditions%22"
     ")"
     "&sortBy=submittedDate"
     "&sortOrder=descending"
-    "&max_results=20"
+    "&max_results=50"
 )
 
 # ========= FETCH =========

@@ -3,7 +3,13 @@ name: arXiv → Discord (daily)
 on:
   schedule:
     - cron: "0 8 * * *"   # 08:00 UTC = 05:00 BRT (UTC-3)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      time_frame:
+        description: "Time frame (default: 1)"
+        required: false
+        default: "1"
+        type: string
 
 jobs:
   run-scripts:
@@ -24,26 +30,43 @@ jobs:
 
       - name: Run Bayesian/QGP alert
         env:
+          TIME_FRAME: ${{ github.event.inputs.time_frame || '1' }}
           DISCORD_WEBHOOK_URL_BAYESIAN_QGP: ${{ secrets.HEP_QGP_BAYESIAN_INFERENCE_HOOK }}
         run: python arxiv-discord-webhookhep-qgp-bayesian-inference.py
 
       - name: Run hep-ph alert
         env:
+          TIME_FRAME: ${{ github.event.inputs.time_frame || '1' }}
           DISCORD_WEBHOOK_URL_HEPPH: ${{ secrets.HEP_PH_HOOK }}
         run: python arxiv-discord-webhook-hep-ph.py
 
       - name: Run QGP + ML alert
         env:
+          TIME_FRAME: ${{ github.event.inputs.time_frame || '1' }}
           DISCORD_WEBHOOK_URL_QGP_ML: ${{ secrets.HEP_QGP_ML_HOOK }}
         run: python arxiv-discord-webhook-hep-qgp-ml.py
       
       - name: Run QGP + DKL alert
         env:
+          TIME_FRAME: ${{ github.event.inputs.time_frame || '1' }}
           DISCORD_WEBHOOK_URL_QGP_DKL: ${{ secrets.HEP_QGP_DEEP_KERNEL_LEARNING }}
         run: python arxiv-discord-webhookhep-qgp-deep-kernel-learning.py
 
       - name: Run QGP + NN alert
         env:
+          TIME_FRAME: ${{ github.event.inputs.time_frame || '1' }}
           DISCORD_WEBHOOK_URL_QGP_NN: ${{ secrets.HEP_QGP_NEURAL_HOOK }}
         run: python arxiv-discord-webhook-hep-qgp-neural.py
+
+      - name: Run QGP + LFI
+        env:
+          LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '1' }}
+          DISCORD_WEBHOOK_URL_QGP_LFI: ${{ secrets.HEP_QGP_LIKELIHOOD_FREE }}
+        run: python arxiv-discord-webhook-hep-qgp-lfi.py
+
+      - name: Run QGP + Baryogenesis
+        env:
+          LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '1' }}
+          DISCORD_WEBHOOK_URL_QGP_BARYOGENESIS: ${{ secrets.HEP_QGP_BARYOGENESIS }}
+        run: python arxiv-discord-webhook-hep-qgp-baryogenesis.py
 

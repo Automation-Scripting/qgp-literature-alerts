@@ -16,7 +16,8 @@ ARXIV_URL = (
 
 # ========= FETCH =========
 feed = feedparser.parse(ARXIV_URL)
-yesterday = datetime.now(timezone.utc) - timedelta(days=1)
+time_frame = int(os.getenv("TIME_FRAME", "1"))
+cutoff = datetime.utcnow() - timedelta(days=time_frame)
 
 papers = []
 for entry in feed.entries:
@@ -25,7 +26,7 @@ for entry in feed.entries:
         "%Y-%m-%dT%H:%M:%SZ"
     ).replace(tzinfo=timezone.utc)
 
-    if published > yesterday:
+    if published > cutoff:
         papers.append(entry)
 
 if not papers:
