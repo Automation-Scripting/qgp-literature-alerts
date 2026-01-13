@@ -29,7 +29,7 @@ REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "20"))
 WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL_QGP_ML"]
 
 ARXIV_URL = (
-    "http://export.arxiv.org/api/query?"
+    "https://export.arxiv.org/api/query?"
     "search_query=("
         "cat:hep-ph+OR+cat:hep-lat+OR+cat:nucl-th+OR+cat:nucl-ex"
     ")"

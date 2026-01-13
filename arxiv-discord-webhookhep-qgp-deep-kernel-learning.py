@@ -29,7 +29,7 @@ REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "20"))
 WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL_QGP_DKL"]
 
 ARXIV_URL = (
-    "http://export.arxiv.org/api/query?"
+    "https://export.arxiv.org/api/query?"
     "search_query=("
         "abs:%22deep+kernel+learning%22"
         "+OR+abs:%22deep+kernel%22"
