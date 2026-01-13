@@ -40,7 +40,7 @@ jobs:
       - name: Run QGP + DKL alert
         env:
           DISCORD_WEBHOOK_URL_QGP_DKL: ${{ secrets.HEP_QGP_DEEP_KERNEL_LEARNING }}
-        run: python arxiv-discord-webhook-hep-qgp-neural.py
+        run: python arxiv-discord-webhookhep-qgp-deep-kernel-learning.py
 
       - name: Run QGP + NN alert
         env:
