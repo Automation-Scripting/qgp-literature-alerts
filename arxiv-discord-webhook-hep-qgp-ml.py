@@ -46,18 +46,11 @@ for entry in feed.entries:
 if not papers:
     exit(0)
 
-# ========= FORMAT MESSAGE =========
-lines = ["**arXiv qgp-ml - novos papers (últimas 24h) - Limitado a 200 resultados **\n"]
-
+# ========= FORMAT MESSAGE AND SEND =========
 for p in papers:
     title = p.title.replace("\n", " ")
     link = p.link
-    lines.append(f"• **{title}**\n  {link}")
+    published = p.published[:10]  # YYYY-MM-DD
 
-message = "\n".join(lines)
-
-# ========= SEND =========
-requests.post(
-    WEBHOOK_URL,
-    json={"content": message}
-)
+    message = f"**{title}**\n {published}\n {link}"
+    requests.post(WEBHOOK_URL, json={"content": message})
