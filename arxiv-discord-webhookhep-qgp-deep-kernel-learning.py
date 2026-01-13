@@ -61,6 +61,7 @@ cutoff = datetime.now(timezone.utc) - timedelta(days=TIME_FRAME)
 feed = feedparser.parse(ARXIV_URL)
 
 total_entries = len(getattr(feed, "entries", []))
+total_available = feed.feed.get("opensearch_totalresults")
 status = getattr(feed, "status", None)
 bozo = getattr(feed, "bozo", None)
 bozo_exc = getattr(feed, "bozo_exception", None) if bozo else None
@@ -74,6 +75,7 @@ print(f"bozo              : {bozo}")
 if bozo_exc:
     print(f"bozo_exception    : {bozo_exc}")
 print(f"Fetched entries   : {total_entries}")
+print(f"Total results available on arXiv: {total_available}")
 
 # If arXiv returned no entries, something is likely wrong (query too strict or API issue).
 if total_entries == 0:
