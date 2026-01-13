@@ -25,12 +25,12 @@ jobs:
       - name: Run Bayesian/QGP alert
         env:
           DISCORD_WEBHOOK_URL_BAYESIAN_QGP: ${{ secrets.HEP_QGP_BAYESIAN_INFERENCE_HOOK }}
-        run: python arxiv-discord-webhook.py
+        run: python arxiv-discord-webhookhep-qgp-bayesian-inference.py
 
       - name: Run hep-ph alert
         env:
           DISCORD_WEBHOOK_URL_HEPPH: ${{ secrets.HEP_PH_HOOK }}
-        run: python arxiv-discord-webhook-2.py
+        run: python arxiv-discord-webhook-hep-ph.py
 
       - name: Run QGP + ML alert
         env:
