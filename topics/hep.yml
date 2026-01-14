@@ -1,0 +1,35 @@
+topics:
+  - id: hep_ph
+    title: "hep-ph (daily)"
+    webhook_env: "DISCORD_WEBHOOK_URL_HEPPH"
+    arxiv_url: "https://export.arxiv.org/api/query?search_query=cat:hep-ph&sortBy=submittedDate&sortOrder=descending&max_results=100"
+
+  - id: qgp_baryogenesis
+    title: "Baryogenesis / leptogenesis (hep-ph + hep-th + astro-ph.CO + gr-qc)"
+    webhook_env: "DISCORD_WEBHOOK_URL_QGP_BARYOGENESIS"
+    arxiv_url: "https://export.arxiv.org/api/query?search_query=(cat:hep-ph+OR+cat:hep-th+OR+cat:astro-ph.CO+OR+cat:gr-qc)+AND+(abs:baryogenesis+OR+abs:%22baryon+asymmetry%22+OR+abs:%22matter+antimatter+asymmetry%22+OR+abs:leptogenesis+OR+abs:%22Sakharov+conditions%22)&sortBy=submittedDate&sortOrder=descending&max_results=200"
+
+  - id: qgp_lfi
+    title: "QGP + Likelihood-Free Inference (SBI/ABC)"
+    webhook_env: "DISCORD_WEBHOOK_URL_QGP_LFI"
+    arxiv_url: "https://export.arxiv.org/api/query?search_query=(cat:hep-ph+OR+cat:hep-lat+OR+cat:nucl-th+OR+cat:nucl-ex)+AND+(abs:%22simulation-based+inference%22+OR+abs:%22likelihood-free%22+OR+abs:ABC+OR+abs:%22neural+posterior%22+OR+abs:%22neural+likelihood%22+OR+abs:%22neural+ratio%22+OR+abs:SBI+OR+abs:%22implicit+model%22)+AND+(abs:%22quark+gluon+plasma%22+OR+abs:QGP+OR+abs:%22heavy+ion%22+OR+abs:%22nucleus-nucleus%22+OR+abs:%22relativistic+heavy+ion%22)&sortBy=submittedDate&sortOrder=descending&max_results=100"
+
+  - id: qgp_ml
+    title: "QGP + ML (emulators/GP/surrogate)"
+    webhook_env: "DISCORD_WEBHOOK_URL_QGP_ML"
+    arxiv_url: "https://export.arxiv.org/api/query?search_query=(cat:hep-ph+OR+cat:hep-lat+OR+cat:nucl-th+OR+cat:nucl-ex)+AND+(abs:%22machine+learning%22+OR+abs:ML+OR+abs:emulator+OR+abs:%22surrogate+model%22+OR+abs:%22Gaussian+process%22)+AND+(abs:%22quark+gluon+plasma%22+OR+abs:QGP+OR+abs:%22heavy+ion%22)&sortBy=submittedDate&sortOrder=descending&max_results=200"
+
+  - id: qgp_nn
+    title: "QGP + Neural Nets / Deep Learning"
+    webhook_env: "DISCORD_WEBHOOK_URL_QGP_NN"
+    arxiv_url: "https://export.arxiv.org/api/query?search_query=(cat:hep-ph+OR+cat:hep-lat+OR+cat:nucl-th+OR+cat:nucl-ex)+AND+(abs:%22neural+network%22+OR+abs:%22neural+networks%22+OR+abs:%22deep+learning%22)+AND+(abs:%22quark+gluon+plasma%22+OR+abs:QGP+OR+abs:%22heavy+ion%22)&sortBy=submittedDate&sortOrder=descending&max_results=200"
+
+  - id: qgp_bayesian
+    title: "QGP + Bayesian inference"
+    webhook_env: "DISCORD_WEBHOOK_URL_BAYESIAN_QGP"
+    arxiv_url: "https://export.arxiv.org/api/query?search_query=(cat:hep-ph+OR+cat:hep-lat+OR+cat:nucl-th)+AND+(abs:bayesian+OR+abs:%22Bayesian+inference%22+OR+abs:%22Bayesian+analysis%22)+AND+(abs:%22quark+gluon+plasma%22+OR+abs:QGP)&sortBy=submittedDate&sortOrder=descending&max_results=200"
+
+  - id: qgp_dkl
+    title: "Deep Kernel Learning / Neural GP / Deep GP"
+    webhook_env: "DISCORD_WEBHOOK_URL_QGP_DKL"
+    arxiv_url: "https://export.arxiv.org/api/query?search_query=(abs:%22deep+kernel+learning%22+OR+abs:%22deep+kernel%22+OR+abs:%22neural+kernel%22+OR+abs:%22learned+kernel%22+OR+abs:%22kernel+learning%22+OR+abs:%22deep+gaussian+process%22+OR+abs:%22neural+gaussian+process%22+OR+abs:%22deep+GP%22)&sortBy=submittedDate&sortOrder=descending&max_results=200"
