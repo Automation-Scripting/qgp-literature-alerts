@@ -179,9 +179,8 @@ def run_topic(session: requests.Session, topic: Dict[str, Any], cutoff: Optional
         print(f"Cutoff (UTC)             : {cutoff.isoformat()}")
         
     print(f"HTTP fetch status        : {status}")
-    print(f"bozo                     : {bozo}")
     if bozo_exc:
-        print(f"bozo_exception           : {bozo_exc}")
+        print(f"Exception                : {bozo_exc}")
 
     print(f"Fetched entries          : {total_fetched}")
     print(f"Total results on arXiv   : {total_available}")
@@ -281,6 +280,7 @@ def run_topic(session: requests.Session, topic: Dict[str, Any], cutoff: Optional
 
     # --- SUMMARY ---
     print("---")
+
     print(f"Total results on arXiv    : {total_available}")
     print(f"Total fetched from arXiv  : {total_fetched}")
     print(f"Passed time filter        : {len(papers)}")
