@@ -177,13 +177,12 @@ def run_topic(session: requests.Session, topic: Dict[str, Any], cutoff: Optional
         print("Cutoff (UTC)              : (no date filtering)")   
     else:
         print(f"Cutoff (UTC)             : {cutoff.isoformat()}")
-        
-    print(f"HTTP fetch status        : {status}")
-    if bozo_exc:
-        print(f"Exception                : {bozo_exc}")
 
     print(f"Fetched entries          : {total_fetched}")
     print(f"Total results on arXiv   : {total_available}")
+    print(f"HTTP fetch status        : {status}")
+    if bozo_exc:
+        print(f"Exception                : {bozo_exc}")
     print(f"Query URL                : {arxiv_url}")
 
     # If arXiv returned no entries, something is likely wrong (query too strict / API issue / parsing)
