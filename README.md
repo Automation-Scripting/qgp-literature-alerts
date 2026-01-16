@@ -7,11 +7,11 @@ This repository contains a **Python runner** that fetches articles from **arXiv*
 
 ## Index
 
-1.[Setup](#1-setup)
-2.[Variable binding](#2-variable-binding)
-3.[Query](#3-query)
-4.[Topic](#4-topic)
-5.[Report](#5-report)
+1. [Setup](#1-setup)
+2. [Variable binding](#2-variable-binding)
+3. [Query](#3-query)
+4. [Topic](#4-topic)
+5. [Report](#5-report)
 
 ---
 
