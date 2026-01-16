@@ -1,5 +1,5 @@
 # arXiv → Discord
-Este repositório contém um **runner em Python** que busca artigos no **arXiv** (via Atom feed) a partir de um arquivo YAML de tópicos/querys e publica diariamente no **Discord** via **Webhook**.
+Este repositório contém um **runner em Python** que busca artigos no **arXiv** a partir de um arquivo YAML de tópicos/querys e publica diariamente no **Discord** via **Webhook**.
 
 ## 1) Setup
 1. Baixe/clone este repositório com todo o código-fonte (inclusive os arquivos da pasta .github/workflows).
@@ -23,7 +23,7 @@ Em cada tópico no arquivo YML (topics/hep.yml), contém a query de busca a ser 
 <img width="747" height="94" alt="image" src="https://github.com/user-attachments/assets/e60bfbbe-6c7e-41fd-871a-0564a805063b" />
 <img width="703" height="355" alt="image" src="https://github.com/user-attachments/assets/de0dd352-429c-4bf3-8845-a60d8ea9f87d" />
 
-### **Nas configurações do GitHub Repository (Settings): criar uma secret com a URL destino do post.**
+### **Nas configurações do GitHub Repository (Settings) para criar uma secret com a URL destino do post.**
 
 ### **Selecione Settings**
 <img width="1098" height="130" alt="image" src="https://github.com/user-attachments/assets/0b3b4f4d-30ec-4cd5-97fa-d0102cf11e5d" />
