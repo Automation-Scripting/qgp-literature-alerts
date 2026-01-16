@@ -1,6 +1,13 @@
 # arXiv → Discord
 Este repositório contém um **runner em Python** que busca artigos no **arXiv** a partir de um arquivo YAML de tópicos/querys e publica diariamente no **Discord** via **Webhook**.
 
+## Índice
+- [Setup](#1-setup)
+- [Bind das variáveis](#2-bind-das-variáveis)
+- [Query](#3-query)
+- [Tópico](#4-tópico)
+- [Relatório](#5-relatório)
+  
 ## 1) Setup
 1. Baixe/clone este repositório com todo o código-fonte (inclusive os arquivos da pasta .github/workflows).
 2. Suba o código em um **novo repositório** (GitHub) em que você é dono.
