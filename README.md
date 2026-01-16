@@ -106,6 +106,7 @@ This is a **direct query** to the arXiv Atom API and is consumed **as-is** by th
 
 No transformation or validation is performed by the system.
 
+<img width="479" height="349" alt="image" src="https://github.com/user-attachments/assets/6537fb75-c33d-49ed-9b26-e6c9a4293f3f" />
 ---
 
 ## 4) Topic
@@ -116,6 +117,8 @@ To add a new topic:
 2. Use the same structure as the existing steps.
 3. Declare the required secrets.
 4. Pass the new topic as a parameter to `runner.py`.
+
+<img width="893" height="343" alt="image" src="https://github.com/user-attachments/assets/ce736f07-f719-43f3-a61d-97ad48fa376e" />
 
 ---
 
@@ -131,65 +134,13 @@ Each run prints:
 - Posted messages
 - Errors (if any)
 
+<img width="1020" height="672" alt="image" src="https://github.com/user-attachments/assets/f3fcd50a-695e-4200-b6a0-ece44a385d01" />
+<img width="1004" height="541" alt="image" src="https://github.com/user-attachments/assets/2f4bba2e-fc4a-4158-aed5-f639d76e815b" />
+
 ---
 
 > **Rule of thumb:**  
 > If the query is wrong, the system is wrong.  
 > If the variable binding is wrong, nothing will be posted.
 
-# arXiv → Discord
-This repository contains a **Python runner** that fetches articles from **arXiv** based on a YAML file of topics/queries and publishes them daily to **Discord** via **Webhook**.
-
----
-
-
-
-### On Discord: how to obtain the value of this variable (post URL)
-
-1. Select the destination channel.
-2. Open **Settings**.
-3. Go to **Integrations**.
-4. Click **New Webhook**.
-5. Copy the value from **Copy Webhook URL**.
-
-This URL is the value that must be stored as a GitHub secret.
-
-
----
-
-### On GitHub: create a secret with the destination post URL
-
-1. Go to your repository **Settings**.
-2. Open **Secrets and variables** → **Actions**.
-3. Click **New repository secret**.
-4. Set the **name** of the secret to match the value used in `webhook_env`.
-5. Set the **value** of the secret to the Discord webhook URL.
-
-
-
-### Bind the secret in the workflow
-
-In the workflow file:
-
-.github/workflows/check_new_papers.yml
-
-Make sure the secret is exposed as an environment variable.
-
----
-
-## 3) Query
-<img width="479" height="349" alt="image" src="https://github.com/user-attachments/assets/6537fb75-c33d-49ed-9b26-e6c9a4293f3f" />
-
-## 4) Tópico
-Para incluir um novo tópico, criar um novo step no workflow com a mesma estrutura do anterior, informando as secrets utilizadas e passando o novo tópico como parâmetro para o runner.py.
-
-<img width="893" height="343" alt="image" src="https://github.com/user-attachments/assets/ce736f07-f719-43f3-a61d-97ad48fa376e" />
-
-## 5) Relatório
-
-### Um relatório detalhado com a busca pode ser acessado em Action, depois em "arXiv -> Discord workflow".
-
-<img width="1020" height="672" alt="image" src="https://github.com/user-attachments/assets/f3fcd50a-695e-4200-b6a0-ece44a385d01" />
-
-<img width="1004" height="541" alt="image" src="https://github.com/user-attachments/assets/2f4bba2e-fc4a-4158-aed5-f639d76e815b" />
 
