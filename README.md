@@ -45,16 +45,16 @@ This variable determines **where** the message will be sent on Discord.
 
 This URL is the value that must be stored as a GitHub secret.
 
-### **2:**
+### **>>:**
 <img width="380" height="51" alt="image" src="https://github.com/user-attachments/assets/3215b6d8-578c-4012-a7c7-ff61bf22e1e6" />
 
-### **3:**
+### **>>:**
 <img width="272" height="187" alt="image" src="https://github.com/user-attachments/assets/d5d6e938-0fde-405b-9727-ebed44bc9108" />
 
-### **4:**
+### **>>:**
 <img width="747" height="94" alt="image" src="https://github.com/user-attachments/assets/e60bfbbe-6c7e-41fd-871a-0564a805063b" />
 
-### **5:**
+### **>>:**
 <img width="703" height="355" alt="image" src="https://github.com/user-attachments/assets/de0dd352-429c-4bf3-8845-a60d8ea9f87d" />
 
 ---
@@ -67,14 +67,20 @@ This URL is the value that must be stored as a GitHub secret.
 4. Set the **name** of the secret to match the value used in `webhook_env`.
 5. Set the **value** of the secret to the Discord webhook URL.
 
-### **1:**
+### **>>:**
 <img width="1098" height="130" alt="image" src="https://github.com/user-attachments/assets/0b3b4f4d-30ec-4cd5-97fa-d0102cf11e5d" />
 
-### **2:**
+### **>>:**
 <img width="364" height="150" alt="image" src="https://github.com/user-attachments/assets/87fedf6b-c0b0-4b9d-ae57-f19ea0895da6" />
 
-### **3:**
+### **>>:**
 <img width="941" height="231" alt="image" src="https://github.com/user-attachments/assets/12a48ae3-b40c-4d36-9f12-948a001f2e37" />
+
+### **>>:**
+<img width="815" height="320" alt="image" src="https://github.com/user-attachments/assets/2520d651-5ef1-4f25-bba0-2391621221a7" />
+
+### **>>:**
+**topics/topic.yml:** <img width="1190" height="150" alt="image" src="https://github.com/user-attachments/assets/a6425669-3963-4016-8ddf-7e741c9d51ae" />
 
 ---
 
@@ -174,11 +180,6 @@ In the workflow file:
 Make sure the secret is exposed as an environment variable.
 
 ---
-### -> **4 (.github/workflows/check_new_papers.yml): **
-<img width="815" height="320" alt="image" src="https://github.com/user-attachments/assets/2520d651-5ef1-4f25-bba0-2391621221a7" />
-
-### **E informe para o topico o valor da variável que recebeu a secret (URL)**
-**topics/topic.yml:** <img width="1190" height="150" alt="image" src="https://github.com/user-attachments/assets/a6425669-3963-4016-8ddf-7e741c9d51ae" />
 
 ## 3) Query
 <img width="479" height="349" alt="image" src="https://github.com/user-attachments/assets/6537fb75-c33d-49ed-9b26-e6c9a4293f3f" />
