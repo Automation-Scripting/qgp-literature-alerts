@@ -64,8 +64,7 @@ This URL is the value that must be stored as a GitHub secret.
 1. Go to your repository **Settings**.
 2. Open **Secrets and variables** → **Actions**.
 3. Click **New repository secret**.
-4. Set the **name** of the secret to match the value used in `webhook_env`.
-5. Set the **value** of the secret to the Discord webhook URL.
+4. Set the **value** of the secret with the Webhook URL.
 
 ### **>>:**
 <img width="1098" height="130" alt="image" src="https://github.com/user-attachments/assets/0b3b4f4d-30ec-4cd5-97fa-d0102cf11e5d" />
@@ -76,14 +75,7 @@ This URL is the value that must be stored as a GitHub secret.
 ### **>>:**
 <img width="941" height="231" alt="image" src="https://github.com/user-attachments/assets/12a48ae3-b40c-4d36-9f12-948a001f2e37" />
 
-### **>>:**
-<img width="815" height="320" alt="image" src="https://github.com/user-attachments/assets/2520d651-5ef1-4f25-bba0-2391621221a7" />
-
-### **>>:**
-**topics/topic.yml:** <img width="1190" height="150" alt="image" src="https://github.com/user-attachments/assets/a6425669-3963-4016-8ddf-7e741c9d51ae" />
-
 ---
-
 ### Bind the secret in the workflow
 
 In the workflow file:
@@ -92,13 +84,17 @@ In the workflow file:
 
 Make sure the secret is exposed as an environment variable.
 
+### **>>:**
+<img width="815" height="320" alt="image" src="https://github.com/user-attachments/assets/2520d651-5ef1-4f25-bba0-2391621221a7" />
+
 ---
 
 ### Bind the variable to the topic
 
 In your topic file (e.g. `topics/topic.yml`), set:
 
-- `webhook_env` = name of the environment variable that contains the secret
+### **>>:**
+<img width="1190" height="150" alt="image" src="https://github.com/user-attachments/assets/a6425669-3963-4016-8ddf-7e741c9d51ae" />
 
 ---
 
