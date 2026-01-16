@@ -36,7 +36,8 @@ Em cada tópico no arquivo YML (topics/hep.yml), contém a query de busca a ser 
 
 ### **Agora no runner (.github/workflows/check_new_papers.yml) informe o nome dessa secret**
 <img width="815" height="320" alt="image" src="https://github.com/user-attachments/assets/2520d651-5ef1-4f25-bba0-2391621221a7" />
-**E finalmente informe para o topico o valor da variável que recebeu a secret (URL)**
+
+### **E informe para o topico o valor da variável que recebeu a secret (URL)**
 **topics/topic.yml:** <img width="1190" height="150" alt="image" src="https://github.com/user-attachments/assets/a6425669-3963-4016-8ddf-7e741c9d51ae" />
 
 ## 3) Query
