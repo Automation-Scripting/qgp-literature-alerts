@@ -17,7 +17,7 @@ This repository contains a **Python runner** that fetches articles from **arXiv*
 
 ## 1) Setup
 
-1. Download/clone this repository with the full source code (including the files inside the `.github/workflows` folder).
+1. Download/clone this repository with the full source code (including the files within the `.github/workflows` folder).
 2. Push the code to a **new repository** (GitHub) that you own.
 <img width="568" height="139" alt="image" src="https://github.com/user-attachments/assets/46935c34-9eec-4524-8109-789223a56d3d" />
 
